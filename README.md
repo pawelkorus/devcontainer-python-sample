@@ -32,11 +32,13 @@ git clone <repository-url>
 cd devcontainer-python-sample
 ```
 
-2. Create a virtual environment:
+2a. Create a virtual environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
+
+2b. Or open project in devcontainer
 
 3. Install dependencies:
 ```bash
