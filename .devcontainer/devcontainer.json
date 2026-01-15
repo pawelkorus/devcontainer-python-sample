@@ -41,5 +41,6 @@
     "PYTHONUNBUFFERED": "1",
     "FLASK_APP": "app.py",
     "FLASK_ENV": "development"
-  }
+  },
+  "postCreateCommand": "pip install -r requirements.txt"
 }
