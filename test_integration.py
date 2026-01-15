@@ -46,7 +46,7 @@ def clean_db(test_app):
 
 
 @pytest.fixture
-def client(test_app, clean_db):
+def client(test_app):
     """Create a test client"""
     with test_app.test_client() as client:
         yield client
