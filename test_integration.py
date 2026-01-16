@@ -52,7 +52,7 @@ def client(test_app):
         yield client
 
 
-def test_create_trivia_integration(client):
+def test_create_trivia_integration(client, clean_db):
     """Integration test: Create trivia and verify it persists"""
     data = {
         'question': 'What is the largest planet in our solar system?',
@@ -78,7 +78,7 @@ def test_create_trivia_integration(client):
     assert retrieved_trivia['difficulty'] == data['difficulty']
 
 
-def test_multiple_trivia_persistence(client):
+def test_multiple_trivia_persistence(client, clean_db):
     """Integration test: Create multiple trivia entries and verify they
     all persist"""
     trivia_entries = [
@@ -113,7 +113,7 @@ def test_multiple_trivia_persistence(client):
         assert retrieved['answer'] == trivia_entries[i]['answer']
 
 
-def test_trivia_with_special_characters(client):
+def test_trivia_with_special_characters(client, clean_db):
     """Integration test: Create trivia with special characters and unicode"""
     data = {
         'question': 'What is the chemical formula for water? (H₂O)',
@@ -134,7 +134,7 @@ def test_trivia_with_special_characters(client):
     assert retrieved['answer'] == data['answer']
 
 
-def test_trivia_long_text(client):
+def test_trivia_long_text(client, clean_db):
     """Integration test: Create trivia with long text fields"""
     data = {
         'question': (
